@@ -1,0 +1,70 @@
+<section id="blog" class="container" >
+        <div class="blog" ng-controller="getPostController">
+            <div class="row">
+                 <div class="col-md-8">
+                    <div class="blog-item">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 text-center">
+                                <div class="entry-meta">
+                                    <span id="publish_date">{{ getDateFormat(posts.created_at) | date:'mediumDate'}}</span>
+                                    <span><i class="fa fa-user"></i> <a href="#">{{ posts.author.first_name }} {{ posts.author.last_name }}</a></span>
+                                    <span><i class="fa fa-comment"></i> <a href="#">{{ comments.length }} Comments</a></span>
+                                </div>
+                            </div>
+                                
+                            <div class="col-xs-12 col-sm-10 blog-content">
+                                <a href="#"><img class="img-responsive img-blog" ng-src="images/blog/{{  posts.image }}" width="100%" alt="" /></a>
+                                <h4>{{ posts.title }}</h4>
+                                <p>{{ posts.content }}</p>
+                                <hr>
+                                    <h3 style="color:#000000">Comments</h3>
+                                <hr>
+                                <!--/.comment list-->
+                                <div class="row" ng-repeat="comment in comments">
+                                    <div class="col-md-12">
+                                        <div>
+                                            <span style="color:#000000"><b>{{ comment.names }} | {{ comment.email }}</b>
+                                            </span><br><br>
+                                        </div>
+                                        <p>{{ comment.body }}</p>
+                                        <div>
+                                            <span class="label label-success">Posted on {{ comment.created_at }}</span>       
+                                        </div>
+                                        <hr>
+                                    </div>
+                                </div>
+                                <hr>
+                                <!--/.comment form-->
+                                <div class="panel panel-info">
+                                    <div class="panel-body">
+                                        <div  class="form-group">
+                                           <form name="personForm" novalidate class="form-inline">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control" placeholder="Email" ng-model="commentPost.email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control"  placeholder="Names" ng-model="commentPost.names">
+                                                </div>
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea placeholder="Write your comment here!" class="form-control" rows="3" ng-model="commentPost.body"></textarea>
+                                        </div>
+                                        <button class="btn btn-xs btn-primary pull-right" type="submit" ng-click="saveComment()">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>  
+                    </div><!--/.blog-item-->
+
+                                
+                </div><!--/.col-md-8-->
+
+                <aside class="col-md-4">
+    			</aside>  
+            </div><!--/.row-->
+        </div>
+    </section><!--/#blog-->
+	

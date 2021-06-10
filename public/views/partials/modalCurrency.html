@@ -1,0 +1,42 @@
+   <div class="panel panel-default">
+    <div class="panel-heading">
+    <button ng-click="$dismiss()" class="close pull-right" 
+             aria-hidden="true">&times;</button>
+      <div class="panel-title">Add new Currency</div>
+       <div class="clearfix"></div>
+    </div>  
+    <div class="panel-body">
+      <form  class="form-horizontal"  novalidate>
+        <div class="form-group required">
+          <label  class="control-label col-md-4  requiredField">Country<span class="asteriskField">*</span> </label>
+          <div class="controls col-md-8 ">
+            <input class="form-control" style="margin-bottom: 10px" type="text" ng-model="records.country"/>
+          </div>     
+        </div>
+        <div  class="form-group required">
+          <label class="control-label col-md-4  requiredField">Symbol<span class="asteriskField">*</span> </label>
+          <div class="controls col-md-8 "> 
+            <input class="form-control"  style="margin-bottom: 10px" type="text" ng-model="records.symbol"/>
+          </div>
+        </div>
+        <div  class="form-group required">
+          <label class="control-label col-md-4  requiredField">Exchange Rate<span class="asteriskField">*</span> </label>
+          <div class="controls col-md-8 "> 
+            <input class="form-control"  style="margin-bottom: 10px" type="text" ng-model="records.exchange_rate"/>
+          </div>
+        </div>
+        <div  class="form-group required">
+          <label class="control-label col-md-4  requiredField">Phone code<span class="asteriskField">*</span> </label>
+          <div class="controls col-md-8 "> 
+            <input class="form-control"  style="margin-bottom: 10px" type="text" ng-model="records.phonecode"/>
+          </div>
+        </div>      
+        <div class="form-group"> 
+          <div class="aab controls col-md-4 "></div>
+          <div class="controls col-md-8 ">
+            <button  type="submit" class="btn btn-primary" ng-click="SaveCurrency(records)"><i class="icon-hand-right"></i> &nbsp Submit</button>
+          </div>
+        </div> 
+      </form>
+    </div>
+  </div>
